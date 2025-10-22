@@ -1,0 +1,86 @@
+<mxfile host="65bd71144e">
+    <diagram id="17WJt-nfe4UQLKozluhP" name="Page-1">
+        <mxGraphModel dx="836" dy="518" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="Estudiante" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="254" y="20" width="160" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="+ ID estudiante&lt;br&gt;+ Nombre&lt;br&gt;+ Dirección&lt;div&gt;+ Fecha nacimiento&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="2">
+                    <mxGeometry y="50" width="160" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Profesor" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="580" y="260" width="160" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="+ ID profesor&lt;br&gt;+ Nombre&lt;br&gt;+ Especialidad&lt;div&gt;+ Teléfono&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="4">
+                    <mxGeometry y="50" width="160" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="Curso" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="254" y="260" width="160" height="120" as="geometry">
+                        <mxRectangle x="254" y="260" width="80" height="50" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7" value="+ ID curso&lt;br&gt;+ Nombre&lt;br&gt;+ Duración&lt;div&gt;+ Descripción&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="6">
+                    <mxGeometry y="50" width="160" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="" style="endArrow=classic;startArrow=classic;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" edge="1" parent="1" source="7" target="5">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="420" y="328" as="sourcePoint"/>
+                        <mxPoint x="460" y="280" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="11" value="Imparte" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="460" y="290" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="405" y="298" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="N" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="555" y="298" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="" style="endArrow=classic;startArrow=classic;html=1;entryX=0.463;entryY=0.986;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="371.92" y="260.98" as="sourcePoint"/>
+                        <mxPoint x="369.99999999999994" y="139.99999999999997" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="15" value="Pertenece" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="340" y="168" width="60" height="62" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="N" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="375" y="140" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="384" y="238" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="" style="endArrow=classic;startArrow=classic;html=1;entryX=0.144;entryY=1.043;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="3">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="280" y="260" as="sourcePoint"/>
+                        <mxPoint x="277" y="160" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="31" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="28">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="210" y="200" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="28" value="Inscrito" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="250" y="170" width="60" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="N" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="245" y="138" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="M" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="245" y="228" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="Fecha inicio" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="120" y="185" width="90" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="&lt;p class=&quot;MsoNormal&quot; style=&quot;line-height:150%&quot;&gt;&lt;b&gt;&lt;span style=&quot;color: black;&quot;&gt;Estudiante &lt;/span&gt;&lt;/b&gt;&lt;span style=&quot;color: black;&quot;&gt;(&lt;span style=&quot;background: lime;&quot;&gt;ID estudiante&lt;/span&gt;, nombre, dirección, fecha nacimiento, &lt;span style=&quot;background: yellow;&quot;&gt;ID curso&lt;/span&gt;)&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;MsoNormal&quot; style=&quot;line-height:150%&quot;&gt;&lt;b&gt;&lt;span style=&quot;color: black;&quot;&gt;Profesor&lt;/span&gt;&lt;/b&gt;&lt;span style=&quot;color: black;&quot;&gt; (&lt;span style=&quot;background: lime;&quot;&gt;ID profesor&lt;/span&gt;, nombre, especialidad, teléfono, &lt;span style=&quot;background: yellow;&quot;&gt;ID curso&lt;/span&gt;)&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;MsoNormal&quot; style=&quot;line-height:150%&quot;&gt;&lt;b&gt;&lt;span style=&quot;color: black;&quot;&gt;Curso&lt;/span&gt;&lt;/b&gt;&lt;span style=&quot;color: black;&quot;&gt; (&lt;span style=&quot;background: lime;&quot;&gt;ID curso&lt;/span&gt;, nombre, duración, descripción)&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;MsoNormal&quot; style=&quot;line-height:150%&quot;&gt;&lt;b&gt;&lt;span style=&quot;color: black;&quot;&gt;Inscripción&lt;/span&gt;&lt;/b&gt;&lt;span style=&quot;color: black;&quot;&gt; (&lt;span style=&quot;background: yellow;&quot;&gt;ID estudiante,&lt;/span&gt; &lt;span style=&quot;background: yellow;&quot;&gt;ID curso,&lt;/span&gt; fecha inicio)&lt;/span&gt;&lt;/p&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="90" y="430" width="430" height="150" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
