@@ -138,16 +138,17 @@ select count(*) as total_jugadores_real_madrid from jugadores where id_equipo = 
 -- 11. Ordenar equipos por ciudad alfabéticamente y despues por año de fundacion descendente.
 select nombre_equipo, ciudad, fundado from equipos order by ciudad, fundado desc;
 
--- 12. Calcular la edad promedio de los jugadores y asignarle un alias, ordenado por ID de equipo y edad promedio de forma descendente.
-select avg(edad) as edad_promedio_jugadores from jugadores order by id_equipo desc;
+-- 12. Calcular la edad promedio de los jugadores y asignarle un alias, agrupado por ID de equipo y edad promedio de forma descendente.
+select id_equipo, avg(edad) as media_edad from jugadores group by id_equipo order by id_equipo, media_edad desc;
 
 -- 13. Mostrar el promedio de goles y asistencias de cada equipo, con alias "promedio_goles" y "promedio_asistencias", ordenados por promedio de goles descendente y promedio de asistencias ascendente.
+select id_equipo, avg(goles) as promedio_goles, avg(asistencias) as promedio_asistencias from jugadores group by id_equipo order by promedio_goles desc, promedio_asistencias asc;
 
-
--- 14. Obtener los equipos con el total de goles anotados en sus partidos como local, usando alias "total_goles", <ordenados por nombre del equipo ascendente>[NO HACE FALTA] y total de goles descendente.
-
+-- 14. Obtener los equipos con el total de goles anotados en sus partidos como local, usando alias "total_goles", ordenados por total de goles descendente.
+select id_equipo_local, sum(goles_local) as total_goles from partidos group by id_equipo_local order by total_goles desc;
 
 -- 15. Contar la cantidad de partidos jugados por cada equipo local, con alias "partidos_local", cantidad de partidos descendente.
+select count(id_partido) as partidos_local group by id_equipo_local order by partidos_local desc;
 
 -- 16. Calcular la cantidad de partidos en los que el equipo local ganó, usando alias "victorias_local", ordenados por cantidad de victorias y goles locales promedio en orden descendente.
 
