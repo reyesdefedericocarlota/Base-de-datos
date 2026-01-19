@@ -76,41 +76,45 @@ INSERT INTO venta VALUES
 select departamento, count(nombre) as numero_empleados from empleado group by departamento order by departamento, numero_empleados;
 
 -- 2. Calcula el salario promedio por ciudad, mostrando solo las ciudades con un salario promedio mayor a 4000.
-select ciudad, avg(salario) as salario_promedio from empleado group by ciudad order by ciudad, salario_promedio > 4000; ???
+select ciudad, avg(salario) as salario_promedio from empleado group by ciudad having salario_promedio > 4000; 
 
 -- 3. Encuentra el total de ventas por cada cliente.
 select cliente, count(*) as ventas_cliente from venta group by cliente order by cliente;
 
 -- 4. Muestra los departamentos con más de 3 empleados.
-
+select departamento from empleado group by departamento having count(departamento) > 2;
 
 -- 5. Calcula el promedio de edad de los empleados por ciudad.
+select ciudad, avg(edad) from empleado group by ciudad;
 
 -- 6. Muestra las ciudades en las que hay empleados, sin duplicados.
+select distinct ciudad from empleado;
 
 -- 7. Muestra el número total de ventas y la suma total de importes.
-
+select cliente, importe from venta order by importe asc;
 
 -- 8. Encuentra el/los cliente/clientes con la venta más baja.
-
+select cliente, importe from venta order by importe asc;
 
 -- 9. Encuentra el cliente que realizó la venta de mayor importe.
-
+select cliente, importe from venta where importe = (select max(importe) from venta);
 
 -- 10. Encuentra los empleados con un salario mayor al promedio de todos los salarios.
+select nombre, salario from empleado where salario > (select avg(salario) from empleado);
 
--- Ejercicios de Subconsultas
+
 
 -- 1. Lista los nombres de empleados que trabajan en departamentos existentes en la tabla departamento.
+select nombre, departamento from empleado;
 
 -- 2. Encuentra todos los empleados cuyo salario sea mayor a 4000 y muestra su nombre y salario.
-
+select nombre, salario from empleado where salario > 4000;
 
 -- 3. Encuentra el nombre del empleado con el salario más alto.
-
+select nombre from empleado where salario = (select max(salario) from empleado); 
 
 -- 4. Calcula el promedio de salarios por departamento y muestra los departamentos con un salario promedio mayor a 5000.
-
+select departamento from empleado group by departamento having avg(salario) > 5000;
 
 -- 5. Encuentra los clientes que han realizado ventas superiores al promedio de todas las ventas.
-
+select cliente from venta where importe > (select avg(importe) from venta);
