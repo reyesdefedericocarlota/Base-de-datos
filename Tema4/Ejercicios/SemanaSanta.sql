@@ -144,62 +144,65 @@ select avg(peso) as peso_promedio from paso;
 select max(numero_costaleros) as costaleros_maximo from hermandad;
 
 -- 24. Obtener el número de procesiones que se realizan en el barrio 'Albaicín'.
-
+select count(*) as procesiones_albaicin from procesion where barrio = 'Albaicín';
 
 -- 25. Sumar el peso de todos los pasos.
-
+select sum(peso) from paso;
 
 -- 26. Agrupar las procesiones por barrio y contar cuántas procesiones hay en cada uno.
-
+select barrio, count(*) as numero_procesiones from procesion group by barrio;
 
 -- 27. Calcular el peso total de los pasos agrupados por estilo.
-
+select estilo, sum(peso) as peso_estilo from paso group by estilo; 
 
 -- 28. Mostrar las hermandades agrupadas por número de costaleros, filtrando aquellas con más de 100 costaleros.
-
+select nombre, numero_costaleros from hermandad where numero_costaleros > 100;
 
 -- 29. Obtener el número de procesiones que tienen puntos de paso después de las 20:00.
-
+select count(distinct id_procesion) as numero_procesiones from itinerario where hora_paso > '20:00:00';
 
 -- 30. Agrupar las hermandades por antigüedad y contar cuántas hay en cada antiguedad.
-
+select antiguedad, count(*) as hermandades_antiguedad from hermandad group by antiguedad;
 
 -- 31. Concatenar el nombre y barrio de cada procesión en un único campo, separados por un guion.
+select concat(nombre, '-', barrio) as procesion_barrio from procesion;
 
 -- 32. Mostrar las procesiones cuyos nombres contienen más de 10 caracteres.
+select nombre from procesion where char_length(nombre) > 10;
 
 -- 33. Seleccionar los nombres de las procesiones que contienen la palabra 'Soledad'.
+select nombre from procesion where nombre like '%Soledad%';
 
 -- 34. Mostrar las hermandades ordenadas por el número de costaleros en orden ascendente.
-
+select * from hermandad order by numero_costaleros asc;
 
 -- 35. Listar los nombres de los pasos en los que la palabra 'Virgen' no aparece.
-
+select nombre from paso where nombre not like '%Virgen%';
 
 -- 36. Calcular la diferencia entre el peso máximo y mínimo de los pasos.
-
+select max(peso) - min(peso) as diferencia_peso_maxmin from paso;
 
 -- 37. Mostrar solo las procesiones cuyo nombre no empieza con 'La'.
-
+select * from procesion where nombre not like 'La%';
 
 -- 38. Formatear la hora de inicio de las procesiones en formato de 12 horas con AM/PM.
-
+select date_format(hora_inicio, '%r') as hora_12_formato from procesion;
 
 -- 39. Mostrar solo la hora (sin minutos ni segundos) del paso por cada punto del itinerario.
-
+select date_format(hora_paso, '%H') as hora_paso from itinerario;
 
 -- 40. Seleccionar las procesiones que tienen su inicio en las próximas 6 horas a partir de la fecha y hora actual.
-
+select * from procesion where hora_inicio between time(now()) and addtime(time(now()), "06:00:00");
 
 
 
 -- EXTRAS
 -- 41. Redondear el peso de los pasos a la centena más cercana.
-
+select nombre, peso, round(peso, -2) as peso_redondeado from paso;
 
 -- 42. Mostrar el peso de los pasos dividido entre 1000, con dos decimales.
-
+select nombre, round(peso/1000, 2) as peso_dividido_decimales from paso;
 
 -- 43. Generar un número aleatorio entre 1 y 100.
-
+select floor(1 + (rand() * 100)) as numero_aleatorio;
 
