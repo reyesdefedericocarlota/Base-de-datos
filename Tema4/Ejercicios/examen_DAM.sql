@@ -38,6 +38,7 @@ select avg(ingresos_anuales) from personas group by SUBSTRING(estado_civil, 1, 5
 -- 10 Dime los nietos de la persona con id 1093
 
 -- 11 Dime la media de numero de hijos por mujer.
+select avg(num_hijos) from personas where sexo = "M";
 
 -- 12 Dime los 5 granadinos (provincia) que más cobran ordenados por la longitud en letras de su ocupacion. 
 
